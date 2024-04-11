@@ -1,0 +1,61 @@
+.relatedpros{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    height: 90vh;
+    border: 3px solid #555;
+    background: url("../Assets/texture.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 3rem;
+    padding: 2rem;
+}
+.relatedpros h1{
+    font-family: "Madimi One", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color: #332927;
+    font-size: 50px;
+    
+}
+.relatedpros hr{
+    width: 200px;
+    height: 6px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    background:#332927 ;
+    
+}
+.relatedpros-item{
+    display: grid;
+    /* align-items: center; */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    place-content: center;
+    gap: 3rem;
+    width: 90%;
+}
+@media screen and (max-width:1240px) {
+    .relatedpros-item{
+        grid-template-columns: 1fr 1fr;
+    }
+    .relatedpros{
+        height: auto;
+    }
+}
+@media screen and (max-width:700px) {
+    .relatedpros{
+        
+        margin: 1rem;
+        padding: 0rem;
+    }
+    .relatedpros-item{
+        
+        grid-template-columns: 1fr;
+        gap: 0rem;
+    }
+    .relatedpros h1{
+        font-size: 35px;
+    }
+    
+}

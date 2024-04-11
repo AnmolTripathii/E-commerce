@@ -1,0 +1,212 @@
+.pro{
+    display: flex;
+    margin: 70px 180px;
+
+}
+.pro_dispay_left{
+    display: flex;
+    gap: 17px;
+    padding: 3rem;
+}
+.left_img_list{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.left_img_list img{
+    height: 163px;
+}
+.pro_display_main_img{
+    width: 586px;
+    height: 700px;
+}
+.pro_display_right{
+    margin: 0px 70px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+.pro_display_right h1{
+    font-size:40px ;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color: #332927;
+}
+.pro_right_stars{
+    display: flex;
+    align-items: center;
+    margin-top: 13px;
+    gap: 5px;
+    color: #1c1c1c;
+    font-size: 16px;
+}
+.pro_display_right_dis{
+    font-family: "Madimi One", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color: #332927;
+}
+.pro_right_stars p{
+    font-family: "Madimi One", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color: #332927;
+}
+.pro_right_prices{
+    display: flex;
+    margin: 40px 0px;
+    gap: 30px;
+    font-size: 24px;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    align-items: baseline;
+}
+.pro_display_old{
+    color: #818181;
+    text-decoration: line-through;
+}
+.pro_display_new{
+    color: #332927;
+    font-size: 30px;
+}
+.pro_display_right_size{
+    margin-top: 55px;
+    color: #332927;
+    font-size: 20px;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color: #332927;
+}
+.pro_display_right_sizes{
+    display: flex;
+    margin: 30px 0px;
+    gap: 20px;
+}
+.pro_display_right_sizes div{
+    padding: 24px;
+    background: #dfcebe;
+    border: 3px solid #332927;
+    font-size: 1rem;
+    border-radius: 9px;
+    cursor: pointer;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color: #332927;
+}
+.pro_display_right button{
+    cursor: pointer;
+    font-size: 1.3rem;
+    width: 100%;
+    padding: 0.7rem 1rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 900;
+    /* font-size: 5rem; */
+    font-style: normal;
+    color: #332927;
+    background-color: #a0785ad6;
+    border: 3px solid #dfcebe;
+    border-radius: 40px;
+    transition: all 400ms;
+    cursor: pointer;
+}
+.pro_display_right button:hover{
+    background-color: #dfcebe;
+    border-color:#a0785ad6 ;
+}
+.pro_right_category{
+    margin-top: 10px;
+    font-family: "Madimi One", sans-serif;
+    /* font-weight: 900; */
+    font-style: normal;
+    color: #332927;
+}
+.pro_right_category span{
+    font-weight: 600;
+}
+@media screen and (max-width:1240px) {
+    .pro{
+        margin: 0 30px;
+    }
+    .pro_dispay_left{
+        padding: 1rem;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: flex-end;
+        padding-left: 0px;
+        padding-right: 0px;
+    
+    }
+    .left_img_list{
+        flex-direction: row;
+    }
+    .left_img_list img{
+        height: 63px;
+
+    }
+    .pro_display_main_img{
+        width: 236px;
+    height: 330px;
+    }
+    .pro_display_right{
+        margin: 0px;
+        padding: 3rem;
+        padding-top: 1rem;
+    }
+    .pro_display_right h1{
+        font-size: 20px;
+    }
+    .pro_right_stars{
+        gap: 1px;
+        font-size: 10px;
+    }
+    .pro_right_stars img{
+        width: 10px;
+    }
+    .pro_right_prices{
+        margin: 18px 0px;
+        gap: 30px;
+        font-size: 19px;
+    }
+    .pro_display_new{
+        font-size: 24px;
+    }
+    .pro_display_right_dis{
+        font-size: smaller;
+    }
+    .pro_display_right_size {
+        margin-top: 27px;
+    }
+    .pro_display_right_sizes{
+        margin: 16px 0px;
+        gap: 15px
+    }
+    .pro_display_right_sizes div {
+        padding: 15px;
+        /* background: #dfcebe;
+        border: 3px solid #332927; */
+        font-size: 0.81rem;
+    }
+    .pro_display_right button {
+        font-size: 0.93rem;
+        width: 70%;
+        padding: 0.4rem 0.9rem;
+    }
+    .pro_right_category {
+        
+        font-size: small;
+    }
+}
+@media screen and (max-width:700px) {
+    .pro{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .pro_display_right{
+        padding: 2rem;
+    }
+}

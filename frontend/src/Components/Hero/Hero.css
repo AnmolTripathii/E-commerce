@@ -1,0 +1,149 @@
+ .Hero{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 23% 25% 52%;
+    padding: 1rem;
+    background-image: url("../Assets/backwall.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+.border2{
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+    width: 93%;
+    border: 5px solid;
+    margin: 0rem;
+    border-radius: 0px 0px 0px 243px;
+}
+.border2 img{
+    width: 100%;
+    border: 4px solid white;
+    border-radius: 0px 0px 0px 230px;
+}
+.picture2{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.border1{
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+    width: 93%;
+    border: 4px solid;
+    margin: 0rem;
+    border-radius: 0px 246px 0px 0px ;
+}
+.border1 img{
+    width: 100%;
+    border: 4px solid white;
+    border-radius: 0px 230px 0px 0px;
+}
+.picture1{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.content{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 0rem 0rem 0rem 13rem;
+}
+.content h1{
+    font-family: "Madimi One", sans-serif;
+  font-weight: 900;
+  font-size: 5rem;
+  font-style: normal;
+  color: #332927;
+}
+.content h2{
+    font-family: "Itim", cursive;
+    font-weight: 600;
+    font-size: 3rem;
+    font-style: normal;
+    color: #332927;
+
+}
+.content button{
+    border-radius: 0px 32px 0px 24px;
+    padding: 1rem;
+    font-family: "Itim", cursive;
+    font-weight: 600;
+    font-size: 1.6rem;
+    border: 4px solid #332927;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-content: center;
+    font-style: normal;
+    color: #332927;
+    background: #AD795D;
+    transition: all 400ms ease;
+}
+.content button:hover{
+    background:#332927 ;
+    color: #AD795D;
+}
+@media screen and (max-width:1240px) {
+    .picture2{
+        display: none;
+    }
+    .Hero{
+        grid-template-columns: 50% 50%;
+    }
+    .content{
+        padding: 2rem;
+    }
+    .content h1{
+        font-size: 3rem;
+    }
+    .content h2{
+        font-size: 2rem;
+    }
+    .content button{
+        font-size: 1.2rem;
+    }
+}
+@media screen and (max-width:700px) {
+    .Hero{
+        grid-template-columns: 50% 50%;
+    }
+    .picture2{
+        display: flex;
+        width: 65%;
+        place-self: end;
+        grid-area: 1 / 1 / span 1 / span 2;
+    }
+    .picture1{
+        
+    width: 65%;
+    place-content: flex-start;
+    grid-area: 3 / 1 / span 2 / span 2;
+    }
+    
+    .content{
+        padding: 1rem;
+    gap: 1rem;
+    grid-column: 1 / span 2;
+    }
+    .content h1{
+        font-size: 1.9rem;
+    }
+    .content h2{
+        font-size: 1.5rem;
+    }
+    .content button{
+        font-size: 1.1rem;
+        padding: 10px;
+        gap: 0.5rem;
+    }
+}

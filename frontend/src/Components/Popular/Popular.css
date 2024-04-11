@@ -1,0 +1,74 @@
+.popular{
+    margin: 4rem;
+    display: flex;
+    background: #EBE7E0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+    padding-top:4rem;
+    padding-bottom: 4rem;
+    background: url("../Assets/texture.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.popular-item{
+    display: grid;
+    /* align-items: center; */
+    grid-template-columns: 20% 20% 20% 20%;
+    /* justify-content: space-evenly; */
+    gap: 3%;
+    place-content: center;
+}
+.heading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.heading h1{
+    font-family: "Itim", cursive;
+    font-weight: 600;
+    font-size: 4rem;
+    font-style: normal;
+    color: #332927;
+    text-decoration: underline;
+}
+.heading h2{
+    font-family: "Itim", cursive;
+    font-weight: 600;
+    font-size: 2rem;
+    font-style: normal;
+    color: #332927;
+    text-decoration: underline;
+}
+@media screen and (max-width:1240px) {
+.popular-item{
+    grid-template-columns: 1fr 1fr;
+}
+.popular{
+    padding: 2rem 4rem;
+}
+.heading h1{
+    font-size: 3rem;
+}
+}
+@media screen and (max-width:700px) {
+    .popular-item{
+        grid-template-columns: 1fr;
+    } 
+    .popular{
+        margin: 2rem;
+        gap: 4rem;
+    }
+    .heading h1{
+        font-size: 1.5rem;
+    }
+    .heading h2{
+        font-size: 1rem;
+    }
+    .popular-item{
+        gap: 1rem;
+    }
+}

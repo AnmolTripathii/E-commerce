@@ -1,0 +1,85 @@
+.item{
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-evenly;
+    border: 6px solid #EAE6DD;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+}
+.Catlog{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 7px solid #00000024;
+    border-radius: 0px;
+}
+.Catlog img{
+    width: 100%;
+    /* padding: 0rem; */
+    border: 4px solid transparent;
+    border-radius: 13px;
+}
+.item h3{
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    font-style: normal;
+    
+    line-height: 2rem;
+    text-align: center;
+        font-family: "Commissioner", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        color: #332927;
+      
+}
+.item-prices{
+    display: flex;
+    gap: 47px;
+    /* font-size: 4rem; */
+    align-items: center;
+    justify-content: space-around;
+}
+.item-price-new{
+    font-family: "Madimi One", sans-serif;
+    font-weight: 900;
+    
+    font-style: normal;
+    color: #332927;
+    font-size: 2rem;
+    
+}
+.item-price-old{
+    font-family: "Madimi One", sans-serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+    font-style: normal;
+    color: #8d1902;
+    text-decoration: line-through;
+}
+    
+.item:hover{
+    transform: scale(1.05);
+    transition: 0.6s;
+}
+@media screen and (max-width:700px) {
+    .item h3{
+        font-size: 1.1rem;
+    }
+    .item{
+        transform: scale(0.9);
+    }
+    .item:hover{
+        transform: scale(1);
+        transition: 0.6s;
+    }
+    .item-price-new{
+        font-size: 2.8rem;
+    }
+    .item-price-old{
+        font-size: 1.8rem;
+    }
+}

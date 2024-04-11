@@ -1,0 +1,128 @@
+.Footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    background: linear-gradient(21deg, #332927 0%, #E9DCC9 74%);
+    /* backdrop-filter: blur(0.7); */
+    background-size: contain;
+    
+}
+
+.footer_logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    width: 15%;
+}
+
+.footer_logo img {
+    width: 100%;
+}
+
+.footer_option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer_option ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.footer_option ul li a {
+    font-family: "Itim", cursive;
+    font-weight: 600;
+    font-style: normal;
+    color: #332927;
+    font-size: 1.52rem;
+    transition: all 400ms;
+}
+
+.footer_option ul li a:hover {
+    color: black;
+    text-decoration: underline;
+    font-size: 1.7rem;
+}
+
+.footer_contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.footer_contact div a {
+    font-family: "Itim", cursive;
+    font-weight: 600;
+    font-style: normal;
+    color: #332927;
+    font-size: 1.52rem;
+    transition: all 400ms;
+}
+
+.footer_contact div a:hover {
+    color: black;
+    font-size: 1.6rem;
+}
+
+.copyright {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.copyright p {
+    font-family: "Itim", cursive;
+    font-weight: 600;
+    font-style: normal;
+    color: #332927;
+    font-size: 1.52rem;
+    padding-bottom: 1rem;
+}
+
+@media screen and (max-width:1240px) {
+    .footer_logo {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .footer_logo {
+        width: 45%;
+    }
+
+    .footer_option ul {
+        flex-wrap: wrap;
+    }
+
+    .footer_option ul li a {
+        font-size: 1.1rem;
+    }
+
+    .footer_contact div a:hover {
+        font-size: 1.2rem;
+    }
+
+    .copyright p {
+        font-size: 1rem;
+    }
+
+    .footer_contact div a {
+        font-size: 1.1rem;
+    }
+
+    .footer_contact div a:hover {
+        font-size: 1.2rem;
+    }
+}

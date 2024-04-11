@@ -1,0 +1,150 @@
+.login_signup{
+    background-image: url("../../Components/Assets/Sign\ up\ with\ Social\ Media\ 3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.backg{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+    aspect-ratio: 1 / 0.6;
+    
+}
+.logo_signup{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: baseline;
+}
+.block{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 16px 24px 2px rgb(0 0 0 / 14%), 0 6px 30px 5px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 30%);
+    background-color: #ffffff;
+}
+.inputs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+.inputs input{
+    width: 90%;
+}
+.cred{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+}
+
+.texti{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+}
+.ui{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+}
+.input_cred{
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    width: 80%;
+    
+}
+.input_cred p{
+    font-size: 0.9rem;
+    padding: 0rem 0.5rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 900;
+    /* font-size: 5rem; */
+    font-style: normal;
+    color: #332927;
+}
+.head h1{
+    font-size: 2.3rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 900;
+    /* font-size: 5rem; */
+    font-style: normal;
+    color: #332927;
+    text-decoration: underline;
+
+}
+.inputs input{
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.9rem 1rem;
+    font-family: "Madimi One", sans-serif;
+    background: none;
+    font-weight: 900;
+
+    font-style: normal;
+    color: #332927;
+    
+    border: 2px solid #e9dcc9;
+    border-radius: 40px;
+    font-family: "Commissioner", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        /* outline: 2px solid black; */
+}
+.cred button{
+    font-size: 1.3rem;
+    width: 100%;
+    padding: 0.7rem 1rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color: #332927;
+    background-color: #a0785ad6;
+    border: 3px solid #dfcebe;
+    border-radius: 40px;
+    transition: all 400ms;
+    cursor: pointer;
+}
+.cred button:hover{
+    background-color: #dfcebe;
+    border-color:#a0785ad6 ;
+}
+.input_cred input{
+    outline: auto;
+}
+.texti{
+    width: 100%;
+    font-size: 1rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 900;
+    /* font-size: 5rem; */
+    font-style: normal;
+    color: #332927;
+}
+.texti span{
+    color: gray;
+    transition: all 400ms;
+    cursor: pointer;
+}
+.texti span:hover{
+    text-decoration: underline;
+    
+}

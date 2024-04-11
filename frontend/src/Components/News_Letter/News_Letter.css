@@ -1,0 +1,131 @@
+.news_letter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 6rem;
+    margin-top: 11rem;
+    margin-bottom: 0rem;
+    gap: 1rem;
+    border: 14px solid white;
+    border-radius: 28px;
+    background: linear-gradient(180deg, #54545499 -22%, #e1ffea22 60%);
+}
+.iconic img{
+    width: 95%;
+}
+.element{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.join{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+.input-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .input {
+    min-height: 50px;
+    width: 500px;
+    padding: 0 2rem;
+    /* color: #fff; */
+    font-size: 1.3rem;
+    border: 1px solid #fc8671;
+    border-radius: 6px 0 0 6px;
+    background-color: transparent;
+    font-family: "Itim", cursive;
+    font-weight: 600;
+    font-style: normal;
+    color: black;
+  }
+  
+  .button--submit {
+    min-height: 50px;
+    padding: 0rem 3rem;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    background-color: #fc8671;
+    color: #fff;    font-family: "Itim", cursive;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+  }
+  
+  .button--submit:hover {
+    background-color: white;
+    color: #fc8671;
+  }
+  
+  .input:focus, .input:focus-visible {
+    border-color: #fc8671;
+    outline: none;
+  }
+  .ele_context h1{
+    font-size: 3rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color: #332927;
+  }
+  .ele_context h3{
+    font-family: "Madimi One", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color: hsl(10, 13%, 18%);
+  }
+  @media screen and (max-width:1240px) {
+    .news_letter{
+      margin: 3rem;
+      margin-bottom: 0rem;
+      margin-top: 11rem;
+    }
+    .ele_context h1{
+      font-size: 1.8rem;
+    }
+    .ele_context h3{
+      font-size: 0.8rem;
+    }
+    .input {
+      min-height: 30px;
+      width: 300px;
+      font-size: 1.1rem;
+    }
+    .button--submit {
+      min-height: 30px;
+      font-size: 1.1rem;
+    }
+  }
+  @media screen and (max-width:700px) {
+    .news_letter{
+      margin: 1rem;
+      margin-bottom: 0rem;
+    }
+    .input {
+      min-height: 10px;
+      width: 190px;
+      font-size: 1rem;
+    }
+    .button--submit {
+      min-height: 10px;
+      font-size: 1.1rem;
+      padding: 0rem 1rem;
+    }
+    .ele_context h1{
+      font-size: 1.1rem;
+    }
+    .ele_context h3{
+      display: none;
+    }
+    .element{
+      gap: 1rem;
+    }
+  }

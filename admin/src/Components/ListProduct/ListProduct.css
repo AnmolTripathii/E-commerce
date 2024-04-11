@@ -1,0 +1,139 @@
+.listproduct{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 740px;
+    padding: 10px 50px;
+    margin: 30px;
+    border-radius: 6px;
+    background: white;
+}
+.listproduct h1{
+    font-family: "Madimi One", sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    font-style: normal;
+    color: #332927;
+}
+.listproduct-main{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr ;
+    gap: 10px;
+    width: 100%;
+    padding: 22px 0px;
+    color: #332927;
+    font-size: 19px;
+    font-weight: 600;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 900;
+    
+    font-style: normal;
+    color: #332927;
+}
+ hr{
+    height: 3px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    background: #e2e2e2;
+}
+.listproduct-format{
+    align-items: center;
+    font-weight: 900;
+    font-size: 16px;
+
+}
+.product-img{
+    height: 80px;
+
+}
+.cart_remove{
+    cursor: pointer;
+    
+}
+.allproduct{
+    width: 100%;
+    overflow-y: auto;
+}
+html::-webkit-scrollbar {
+    width: 10px;
+  }
+
+html::-webkit-scrollbar-track {
+    background: rgb(179, 177, 177);
+    border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: rgb(136, 136, 136);
+    border-radius: 10px;
+  }
+
+html::-webkit-scrollbar-thumb:hover {
+    background: rgb(100, 100, 100);
+    border-radius: 10px;
+  }
+
+html::-webkit-scrollbar-thumb:active {
+    background: rgb(68, 68, 68);
+    border-radius: 10px;
+  }
+  div::-webkit-scrollbar {
+    width: 10px;
+  }
+
+div::-webkit-scrollbar-track {
+    background: rgb(179, 177, 177);
+    border-radius: 10px;
+}
+
+div::-webkit-scrollbar-thumb {
+    background: rgb(136, 136, 136);
+    border-radius: 10px;
+  }
+
+div::-webkit-scrollbar-thumb:hover {
+    background: rgb(100, 100, 100);
+    border-radius: 10px;
+  }
+
+div::-webkit-scrollbar-thumb:active {
+    background: rgb(68, 68, 68);
+    border-radius: 10px;
+  }
+@media screen and (max-width:1240px) {
+    .listproduct-main{
+        grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+        font-size: 15px;
+    }
+    .listproduct{
+        margin: 8px;
+    }
+    .listproduct h1{
+        font-size: 2rem;
+    }
+    .listproduct-format{
+        font-size: 13px;
+    }
+    .product-img{
+        height: 60px;
+    }
+}
+@media screen and (max-width:700px) {
+    .listproduct{
+        padding: 10px 20px;
+    }
+    .listproduct-main{
+        font-size: 12px;
+    }
+    .listproduct{
+        margin: 8px;
+    }
+    .listproduct h1{
+        font-size: 1.7rem;
+    }
+    .listproduct-format{
+        font-size: 10px;
+    }
+    .product-img{
+        height: 60px;
+    }
+}

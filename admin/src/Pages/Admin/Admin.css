@@ -1,0 +1,20 @@
+.adimin{
+    display: grid;
+    grid-template-columns: 18% 78%;
+    gap: 4%;
+    /* place-items: center; */
+    height: 100vh;
+}
+@media screen and (max-width:1240px) {
+    .adimin{
+        grid-template-columns: 22% 74%;
+    } 
+}
+@media screen and (max-width:700px) {
+    .adimin{
+        grid-template-columns: 1fr;
+        place-content: baseline;
+        gap: 0rem;
+    
+    } 
+}

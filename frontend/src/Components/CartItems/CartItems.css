@@ -1,0 +1,238 @@
+.cartItems{
+    margin: 100px 170px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 2rem;
+}
+.cartItems hr{
+    height: 3px;
+    background: #e2e2e2;
+}
+.cart_format_main{
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    gap: 75px;
+    padding: 20px 0px;
+    color: #454545;
+    font-size: 1.4rem;
+    place-items: center;
+    font-weight: 600;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    padding: 1rem;
+}
+.main{
+    font-family: "Madimi One", sans-serif;
+    font-weight: 900;
+    
+    font-style: normal;
+    color: #332927;
+    
+}
+.cartItems_format{
+    font-size: 17px;
+    font-family: "Commissioner", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        color: #332927;
+}
+.product_icon{
+    height: 82px;
+    border: 3px solid #ebebeb;
+
+}
+.cart_remove{
+    width: 15px;
+    margin: 0px 40px;
+    cursor: pointer;
+}
+.quantity{
+    width: 64px;
+    height: 50px;
+    border: 4px solid #ebebee;
+    background: white;
+    font-size: 1.2rem;
+    border-radius: 9px;
+    font-family: "Commissioner", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        color: #332927;
+}
+.cartitems-down{
+    display: flex;
+    margin: 100px 0px;
+}
+.cart-total{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 200px;
+    gap: 40px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    padding: 1.5rem;
+    border-radius:23px ;
+}
+.cart-total h1{
+    font-family: "Madimi One", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color: #332927;
+}
+.total-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0px;
+    font-family: "Commissioner", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    /* color: #332927; */
+}
+.cart-total button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.92rem;
+    width: 262px;
+    height: 58px;
+    padding: 0.7rem 1rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color: #332927;
+    background-color: #eaeaea;
+    border: 3px solid #dbd7d3;
+    border-radius: 40px;
+    cursor: pointer;
+    gap: 0rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    transition: all 500ms;
+}
+.cart-total button:hover{
+    gap: 1rem;
+    background-color: #a38269d6;
+}
+.promotion{
+    flex: 1;
+    font-size: 16px;
+    font-weight: 500;
+}
+.para{
+    font-family: "Commissioner", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        color: #332927;
+  
+}
+.promo_box{
+    width: 504px;
+    margin-top: 15px;
+    padding-left: 20px;
+    height: 58px;
+    background: #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.promo_box input{
+    border:none;
+    outline: none;
+    background: transparent;
+    font-size: 1.2rem;
+    width: 330px;
+    height: 50px;
+    font-family: "Commissioner", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        color: #332927;
+}
+.promo_box button{
+    width: 170px;
+    height: 58px;
+    font-size: 1.2rem;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    transition: all 400ms;
+}
+.promo_box button:hover{
+    color: black;
+    background-color:  #eaeaea;
+    border: 1px solid white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+@media screen and (max-width:1240px) {
+    .cartitems-down{
+        flex-direction: column-reverse;
+        gap: 1.5rem;
+    }
+    .cartItems{
+        margin: 30px 30px ;
+    }
+    .cart_format_main{
+        gap: 0px;
+        font-size: 1.1rem;
+    }
+    .promo_box{
+        width: 400px;
+        height: 48px;
+    }
+    .promo_box button{
+        height: 48px;
+        width: 150px;
+        font-size: 0.9rem;
+    }
+    .promo_box input{
+        font-size: 0.9rem;
+    }
+    .cart-total{
+        padding: 2rem;
+
+    }
+    .cart-total h1{
+        font-size: 1.5rem;
+    }
+    .cartItems_format{
+        font-size: 0.8rem;
+    }
+}
+@media screen and (max-width:700px) {
+    .cartItems{
+        margin: 5px;
+        padding: 0.5rem;
+    }
+    .promo_box{
+        width: 100%;
+        height: 38px;
+    }
+    .promo_box button{
+        height: 38px;
+        font-size: 0.8rem;
+    }
+    .cart_format_main{
+        font-size: 0.7rem;
+    }
+    .promotion{
+        font-size: 12px;
+    }
+    .promo_box input{
+        font-size: 0.7rem;
+    }
+    .cart-total{
+        width: 95%;
+    }
+    .cart-total button{
+        padding: 0.5rem 0.8rem;
+        font-size: 0.72rem;
+        width: 191px;
+        height: 45px;
+        align-self: center;    
+    }
+    .cart-total h1 {
+        font-size: 1.2rem;
+    }
+    .total-item div{
+        font-size: 0.71rem;
+    }
+}

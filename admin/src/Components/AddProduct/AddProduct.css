@@ -1,0 +1,116 @@
+.addproduct{
+       /* width: 100%; */
+       display: flex;
+       flex-direction: column;
+       align-items: flex-start;
+       gap: 3rem;
+       justify-content: flex-start;
+       padding: 3rem;
+       margin: 3rem;
+       border-radius: 50px;
+       background-color: white;
+       box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.itemfield{
+       color: #332927;
+    font-size: 1.6rem;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    width: 100%;
+}
+.itemfield p{
+       margin: 0.5rem 0rem;
+}
+.itemfield input{
+       width: 60%;
+       height: 50px;
+       border-radius: 5px;
+       padding-left: 15px;
+       border: 2px solid #c3c3c3;
+       color: #332927;
+       font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.2rem;
+}
+.price{
+       width: 74%;
+       display: flex;
+       gap: 40px;
+}
+.add-category{
+       padding: 8px;
+       width: 186px;
+       height: 42px;
+       font-size: 16px;
+       color: #332927;
+       border: 2px solid #7b7b7b8d;
+       font-family: "Ubuntu", sans-serif;
+       font-weight: 600;
+       font-style: normal;
+       border-radius: 5px;
+}
+.thumbnail{
+       height: 120px ;
+       width: 120px;
+       border-radius: 10px;
+       object-fit: contain;
+       margin: 10px 0px;
+}
+ button{
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       font-size: 1.2rem;
+       width: 262px;
+       height: 58px;
+       padding: 0.7rem 1rem;
+       font-family: "Madimi One", sans-serif;
+       font-weight: 900;
+       font-style: normal;
+       color: #332927;
+       background-color: #eaeaea;
+       border: 3px solid #dbd7d3;
+       border-radius: 40px;
+       cursor: pointer;
+       gap: 0rem;
+       box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+       transition: all 500ms;
+}
+button:hover{
+       box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+@media screen and (max-width:1240px) {
+       .itemfield input{
+              width: 100%;
+       }
+       .price{
+              width: 100%;
+       }
+       .addproduct{
+              padding: 2rem;
+              margin: 1rem;
+       }
+}
+@media screen and (max-width:700px) {
+       .price{
+              flex-direction: column;
+       }
+       .addproduct{
+              gap: 0rem;
+              
+       }
+       .itemfield{
+              font-size: 1.1rem;
+       }
+       .itemfield input{
+              font-size: 0.8rem;
+              font-weight: 600;
+              height: 30px;
+       }
+       .thumbnail{
+              height: 100px;
+              width: 100px;
+       }
+}
