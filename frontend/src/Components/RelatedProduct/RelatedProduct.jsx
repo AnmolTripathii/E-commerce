@@ -52,7 +52,7 @@ function RelatedProduct({ product }) {
   useEffect(() => {
     // Ensure product object and category are valid
     if (productRef.current && productRef.current.category) {
-      fetch(`http://localhost:4000/relatedproducts/${productRef.current.category}`)
+      fetch(`${process.env.URL}/relatedproducts/${productRef.current.category}`)
         .then((response) => {
           if (!response.ok) {
             throw new Error('Failed to fetch related products');

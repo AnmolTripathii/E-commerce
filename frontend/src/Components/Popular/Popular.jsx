@@ -5,7 +5,7 @@ function Popular() {
 
   const [popularProduct ,setPopularProduct] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:4000/popularinwomen')
+    fetch(`${process.env.URL}/popularinwomen`)
         .then((response) => response.json())
         .then((data) => setPopularProduct(data))
         .catch((error) => console.error('Error fetching popular products for women:', error));

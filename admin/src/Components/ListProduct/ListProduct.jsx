@@ -5,13 +5,13 @@ import { RiCloseLine } from 'react-icons/ri';
 function ListProduct() {
   const [allproducts, setAllProducts] = useState([]);
   const fetchInfo = async () => {
-    await fetch('http://localhost:4000/allproducts').then((res) => res.json()).then((data) => { setAllProducts(data) })
+    await fetch(`${process.env.URL}/allproducts`).then((res) => res.json()).then((data) => { setAllProducts(data) })
   }
   useEffect(() => {
     fetchInfo();
   }, [])
   const remove_product = async(id)=>{
-    await fetch('http://localhost:4000/removeproduct',{
+    await fetch(`${process.env.URL}/removeproduct`,{
       method:'POST',
       headers:{
         Accept:'application/json',
