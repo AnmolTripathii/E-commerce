@@ -14,7 +14,7 @@
 //   useEffect(() => {
 //     // Fetch related products only if the product object is defined
 //     if (productRef.current && productRef.current.category) {
-//       fetch(`http://localhost:4000/relatedproducts/${productRef.current.category}`)
+//       fetch(`https://e-commerce-virid-phi.vercel.app/relatedproducts/${productRef.current.category}`)
 //         .then((response) => response.json())
 //         .then((data) => setRelatedProducts(data))
 //         .catch((error) => console.error('Error fetching related product:', error));
@@ -52,7 +52,7 @@ function RelatedProduct({ product }) {
   useEffect(() => {
     // Ensure product object and category are valid
     if (productRef.current && productRef.current.category) {
-      fetch(`http://localhost:4000/relatedproducts/${productRef.current.category}`)
+      fetch(`https://e-commerce-virid-phi.vercel.app/relatedproducts/${productRef.current.category}`)
         .then((response) => {
           if (!response.ok) {
             throw new Error('Failed to fetch related products');
