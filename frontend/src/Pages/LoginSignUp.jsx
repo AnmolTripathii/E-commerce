@@ -14,7 +14,7 @@ function LoginSignUp() {
   const login = async()=>{
     console.log("Loing Function Excuted",formData);
     let responseData;
-    await fetch(`https://e-commerce-virid-phi.vercel.app/login`,{
+    await fetch(`http://localhost:4000/login`,{
       method:"POST",
       headers:{
         Accept:'application/form-data',
@@ -35,7 +35,7 @@ function LoginSignUp() {
   const signup = async()=>{
     console.log("Signup Function Excuted")
     let responseData;
-    await fetch(`https://e-commerce-virid-phi.vercel.app/signup`,{
+    await fetch(`http://localhost:4000/signup`,{
       method:"POST",
       headers:{
         Accept:'application/form-data',

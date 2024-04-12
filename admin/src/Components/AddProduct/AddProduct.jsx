@@ -27,7 +27,7 @@ function AddProduct() {
         let formData = new FormData();
         formData.append('product', image);
 
-        await fetch(`https://e-commerce-virid-phi.vercel.app/upload`, {
+        await fetch(`http://localhost:4000/upload`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -42,7 +42,7 @@ function AddProduct() {
         if (responseData.success) {
             product.image = responseData.cloudinary_image_url;
             console.log(product);
-            await fetch(`https://e-commerce-virid-phi.vercel.app/addproduct`, {
+            await fetch(`http://localhost:4000/addproduct`, {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
