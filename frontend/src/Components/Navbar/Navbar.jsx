@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { ShopContext } from '../../Context/ShopContext';
 
 const Navbar = () => {
-  const [line, setLine] = useState(localStorage.getItem('line') || "Shop");
+  const [line, setLine] = useState( "");
   const [toggleMenu, setToggleMenu] = useState(false);
   const { getTotalCartItem } = useContext(ShopContext);
 

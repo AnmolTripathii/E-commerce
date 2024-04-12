@@ -27,7 +27,7 @@ function AddProduct() {
         let formData = new FormData();
         formData.append('product', image);
 
-        await fetch(`${process.env.URL}/upload`, {
+        await fetch(`http://localhost:4000/upload`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -40,9 +40,9 @@ function AddProduct() {
         });
 
         if (responseData.success) {
-            product.image = responseData.image_url;
+            product.image = responseData.cloudinary_image_url;
             console.log(product);
-            await fetch(`${process.env.URL}/addproduct`, {
+            await fetch(`http://localhost:4000/addproduct`, {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',

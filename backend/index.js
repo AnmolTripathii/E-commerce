@@ -8,6 +8,14 @@ const cors = require("cors");
 const jwt = require("jsonwebtoken")
 const bcrypt = require('bcrypt')
 require("dotenv").config(); 
+const cloudinary = require('cloudinary').v2;
+const fs = require('fs');
+          
+cloudinary.config({ 
+  cloud_name: process.env.CLOUD_NAME, 
+  api_key: process.env.API_KEY, 
+  api_secret: process.env.API_SECRET
+});
 
 app.use(express.json());
 app.use(cors());
@@ -19,10 +27,25 @@ mongoose.connect(process.env.MONGO_DB);
 app.get("/", (req, res) => {
     res.send("Express app is running");
 });
+const uploadOnCloudinary = async (localFilePath) =>{
+    try{
+        if(!localFilePath) return null
+        const response=await cloudinary.uploader.upload(localFilePath,{
+            resource_type: "auto"
+        }) 
+        console.log("file is uploded on cloudinary",response.url);
+        return response
+    }catch(error){
+        fs.unlinkSync(localFilePath)
+        return null;
+    }
+}
 
 // Image storage configuration
 const storage = multer.diskStorage({
-    destination: './upload/images',
+    destination: function (req, file,cb){
+        cb(null,'./upload/images')
+    },
     filename: (req, file, cb) => {
         cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`);
     }
@@ -32,11 +55,30 @@ const upload = multer({ storage: storage });
 
 // Endpoint for uploading images
 app.use('/images', express.static('upload/images'));
-app.post("/upload", upload.single('product'), (req, res) => {
-    res.json({
-        success: 1,
-        image_url: `http://localhost:${port}/images/${req.file.filename}`
-    });
+// app.post("/upload", upload.single('product'), (req, res) => {
+//     res.json({
+//         success: 1,
+//         image_url: `http://localhost:${port}/images/${req.file.filename}`
+//     });
+// });
+app.post("/upload", upload.single('product'), async (req, res) => {
+    try {
+        // Upload image to local directory
+        const localFilePath = req.file.path;
+
+        // Upload image to Cloudinary
+        const cloudinaryResponse = await uploadOnCloudinary(localFilePath);
+
+        // Response with image URLs
+        res.json({
+            success: 1,
+            local_image_url: `http://localhost:${port}/images/${req.file.filename}`,
+            cloudinary_image_url: cloudinaryResponse.url
+        });
+    } catch (error) {
+        console.error("Error uploading image:", error);
+        res.status(500).json({ success: 0, error: "Internal Server Error" });
+    }
 });
 
 // Schema for creating product
