@@ -18,7 +18,13 @@ cloudinary.config({
 });
 
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+    {
+        origin: ["https://e-commerce-dx27.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_DB);
