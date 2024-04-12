@@ -12,7 +12,8 @@
         "src": "/popularinwomen",
         "methods": ["GET", "OPTIONS"],
         "headers": {
-          "Access-Control-Allow-Origin": "https://e-commerce-dx27.vercel.app"
+          "Access-Control-Allow-Origin": "https://e-commerce-dx27.vercel.app",
+          "Access-Control-Allow-Methods": "GET, OPTIONS"
         },
         "dest": "https://e-commerce-virid-phi.vercel.app/popularinwomen"
       },
@@ -20,7 +21,8 @@
         "src": "/newcollections",
         "methods": ["GET", "OPTIONS"],
         "headers": {
-          "Access-Control-Allow-Origin": "https://e-commerce-dx27.vercel.app"
+          "Access-Control-Allow-Origin": "https://e-commerce-dx27.vercel.app",
+          "Access-Control-Allow-Methods": "GET, OPTIONS"
         },
         "dest": "https://e-commerce-virid-phi.vercel.app/newcollections"
       },
@@ -28,7 +30,8 @@
         "src": "/allproducts",
         "methods": ["GET", "OPTIONS"],
         "headers": {
-          "Access-Control-Allow-Origin": "https://e-commerce-dx27.vercel.app"
+          "Access-Control-Allow-Origin": "https://e-commerce-dx27.vercel.app",
+          "Access-Control-Allow-Methods": "GET, OPTIONS"
         },
         "dest": "https://e-commerce-virid-phi.vercel.app/allproducts"
       },
