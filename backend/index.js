@@ -341,9 +341,23 @@ app.get('/allproducts', async (req,res)=>{
 })
 
 // GET request to fetch an image
-app.get('/fetch-image/:imageName', (req, res) => {
-    const imageName = req.params.imageName;
-    res.sendFile(path.join(__dirname, `upload/images/${imageName}`));
+// app.get('/fetch-image/:imageName', (req, res) => {
+//     const imageName = req.params.imageName;
+//     res.sendFile(path.join(__dirname, `upload/images/${imageName}`));
+// });
+app.get('/fetch-image/:imageName', async (req, res) => {
+    try {
+        const imageName = req.params.imageName;
+
+        // Construct the Cloudinary URL for the image
+        const cloudinaryUrl = cloudinary.url(imageName);
+
+        // Redirect to the Cloudinary URL to serve the image
+        res.redirect(cloudinaryUrl);
+    } catch (error) {
+        console.error("Error fetching image:", error);
+        res.status(500).json({ success: 0, error: "Internal Server Error" });
+    }
 });
 
 //creating endpoint for new collection
