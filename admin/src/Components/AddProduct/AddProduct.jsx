@@ -27,7 +27,7 @@ function AddProduct() {
         let formData = new FormData();
         formData.append('product', image);
 
-        await fetch(`https://e-commerce-13p7ha16g-anmols-projects-8415e94a.vercel.app/upload`, {
+        await fetch(`https://e-commerce-woad-one.vercel.app/upload`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -42,7 +42,7 @@ function AddProduct() {
         if (responseData.success) {
             product.image = responseData.cloudinary_image_url;
             console.log(product);
-            await fetch(`https://e-commerce-13p7ha16g-anmols-projects-8415e94a.vercel.app/addproduct`, {
+            await fetch(`https://e-commerce-woad-one.vercel.app/addproduct`, {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
