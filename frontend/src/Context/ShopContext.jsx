@@ -159,7 +159,7 @@ const ShopContextProvider = (props) => {
             .then((data) => console.log(data))
             .catch((error) => console.error('Error adding to cart:', error));
         } else {
-            window.location.replace("https://e-commerce-woad-one.vercel.app/login");
+            window.location.replace("/login");
         }
     }
 
