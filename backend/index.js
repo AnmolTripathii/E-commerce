@@ -4,7 +4,7 @@ const app = express();
 const mongoose = require("mongoose");
 const multer = require("multer");
 const path = require("path");
-const cors = require("cors");
+const cors = require("cors")
 const jwt = require("jsonwebtoken")
 const bcrypt = require('bcrypt')
 require("dotenv").config(); 
@@ -18,12 +18,9 @@ cloudinary.config({
 });
 
 app.use(express.json());
-const corsOptions = {
-    origin: 'https://e-commerce-13p7ha16g-anmols-projects-8415e94a.vercel.app/allproducts', // Replace this with your domain
-    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-  };
-  
-  app.use(cors(corsOptions));
+app.use(cors({
+    origin: 'https://e-commerce-azfe.vercel.app/'
+  }));
   
 
 
