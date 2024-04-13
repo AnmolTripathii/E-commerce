@@ -103,7 +103,6 @@ app.post("/upload", upload.single('product'), async (req, res) => {
         // Response with image URLs
         res.json({
             success: 1,
-            local_image_url: `http://localhost:${port}/images/${req.file.filename}`,
             cloudinary_image_url: cloudinaryResponse.url
         });
     } catch (error) {

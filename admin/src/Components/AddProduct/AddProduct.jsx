@@ -20,43 +20,100 @@ function AddProduct() {
         });
         setImage(false);
     };
+    // const Add_Product = async () => {
+
+    //     console.log(prductDetails);
+    //     let responseData;
+    //     let product = prductDetails;
+    //     let formData = new FormData();
+    //     formData.append('product', image);
+
+    //     await fetch(`https://e-commerce-woad-one.vercel.app/upload`, {
+    //         method: 'POST',
+    //         headers: {
+    //             Accept: 'application/json',
+    //         },
+    //         body: formData,
+    //     })
+    //     .then((resp) => resp.json())
+    //     .then((data) => {
+    //         responseData = data;
+    //     });
+
+    //     if (responseData.success) {
+    //         product.image = responseData.cloudinary_image_url;
+    //         console.log(product);
+    //         await fetch(`https://e-commerce-woad-one.vercel.app/addproduct`, {
+    //             method: 'POST',
+    //             headers: {
+    //                 Accept: 'application/json',
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify(product),
+    //         })
+    //         .then((resp) => resp.json())
+    //         .then((data) => {
+    //             data.success ? alert('Product Added') : alert('Failed');
+    //         });
+    //         resetForm(); // Reset the form after successful submission
+    //     }
+    // };
+
     const Add_Product = async () => {
-        console.log(prductDetails);
-        let responseData;
-        let product = prductDetails;
-        let formData = new FormData();
-        formData.append('product', image);
-
-        await fetch(`https://e-commerce-woad-one.vercel.app/upload`, {
-            method: 'POST',
-            headers: {
-                Accept: 'application/json',
-            },
-            body: formData,
-        })
-        .then((resp) => resp.json())
-        .then((data) => {
-            responseData = data;
-        });
-
-        if (responseData.success) {
-            product.image = responseData.cloudinary_image_url;
-            console.log(product);
-            await fetch(`https://e-commerce-woad-one.vercel.app/addproduct`, {
+        try {
+            let responseData;
+            let product = prductDetails;
+            let formData = new FormData();
+            formData.append('product', image);
+    
+            const uploadResponse = await fetch(`https://e-commerce-woad-one.vercel.app/upload`, {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
-                    'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(product),
-            })
-            .then((resp) => resp.json())
-            .then((data) => {
-                data.success ? alert('Product Added') : alert('Failed');
+                body: formData,
             });
-            resetForm(); // Reset the form after successful submission
+            
+            if (!uploadResponse.ok) {
+                throw new Error('Failed to upload image');
+            }
+    
+            const uploadData = await uploadResponse.json();
+            responseData = uploadData;
+    
+            if (responseData.success) {
+                product.image = responseData.cloudinary_image_url;
+                console.log(product);
+                const addProductResponse = await fetch(`https://e-commerce-woad-one.vercel.app/addproduct`, {
+                    method: 'POST',
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(product),
+                });
+    
+                if (!addProductResponse.ok) {
+                    throw new Error('Failed to add product');
+                }
+    
+                const addProductData = await addProductResponse.json();
+    
+                if (addProductData.success) {
+                    alert('Product Added');
+                    resetForm(); // Reset the form after successful submission
+                } else {
+                    alert('Failed to add product');
+                }
+            } else {
+                alert('Failed to upload image');
+            }
+        } catch (error) {
+            console.error(error);
+            alert('An error occurred while processing your request');
         }
     };
+    
 
     const imageHandler = (e)=>{
         setImage(e.target.files[0]);
