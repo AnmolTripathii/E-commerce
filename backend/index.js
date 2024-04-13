@@ -10,6 +10,7 @@ const bcrypt = require('bcrypt')
 require("dotenv").config(); 
 const cloudinary = require('cloudinary').v2;
 const fs = require('fs');
+const { METHODS } = require("http");
           
 cloudinary.config({ 
   cloud_name: process.env.CLOUD_NAME, 
@@ -18,10 +19,13 @@ cloudinary.config({
 });
 
 app.use(express.json());
-app.use(cors({
-    origin: 'https://e-commerce-azfe.vercel.app/'
-  }));
-  
+const corsOptions = {
+  origin: 'https://e-commerce-azfe.vercel.app',
+  methods:["GET","POST","PUT","DELETE"],
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+
+app.use(cors(corsOptions));
 
 
 
