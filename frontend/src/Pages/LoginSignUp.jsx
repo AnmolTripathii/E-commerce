@@ -14,7 +14,7 @@ function LoginSignUp() {
   const login = async()=>{
     console.log("Loing Function Excuted",formData);
     let responseData;
-    await fetch(`https://e-commerce-13p7ha16g-anmols-projects-8415e94a.vercel.app/login`,{
+    await fetch(`https://e-commerce-woad-one.vercel.app/login`,{
       method:"POST",
       headers:{
         Accept:'application/form-data',
@@ -35,7 +35,7 @@ function LoginSignUp() {
   const signup = async()=>{
     console.log("Signup Function Excuted")
     let responseData;
-    await fetch(`https://e-commerce-13p7ha16g-anmols-projects-8415e94a.vercel.app/signup`,{
+    await fetch(`https://e-commerce-woad-one.vercel.app/signup`,{
       method:"POST",
       headers:{
         Accept:'application/form-data',
