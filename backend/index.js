@@ -19,8 +19,9 @@ cloudinary.config({
 });
 
 app.use(express.json());
+const allowedOrigins = ['https://e-commerce-azfe.vercel.app', 'https://e-commerce-ncd7.vercel.app/'];
 const corsOptions = {
-  origin: 'https://e-commerce-azfe.vercel.app',
+  origin: allowedOrigins,
   methods:["GET","POST","PUT","DELETE"],
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
