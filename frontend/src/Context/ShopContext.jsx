@@ -159,8 +159,8 @@ const ShopContextProvider = (props) => {
             .then((data) => console.log(data))
             .catch((error) => console.error('Error adding to cart:', error));
         } else {
-            // window.location.replace("/login");
-          alert("You are not logged in. Please log in to access this feature.");
+            window.location.replace(`https://e-commerce-azfe.vercel.app/login`);
+        
         }
     }
 
