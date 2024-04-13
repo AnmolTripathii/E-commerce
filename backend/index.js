@@ -58,24 +58,76 @@ mongoose.connect(process.env.MONGO_DB);
 app.get("/", (req, res) => {
     res.send("Express app is running");
 });
-const uploadOnCloudinary = async (localFilePath) =>{
-    try{
-        if(!localFilePath) return null
-        const response=await cloudinary.uploader.upload(localFilePath,{
+// const uploadOnCloudinary = async (localFilePath) =>{
+//     try{
+//         if(!localFilePath) return null
+//         const response=await cloudinary.uploader.upload(localFilePath,{
+//             resource_type: "auto"
+//         }) 
+//         console.log("file is uploded on cloudinary",response.url);
+//         return response
+//     }catch(error){
+//         fs.unlinkSync(localFilePath)
+//         return null;
+//     }
+// }
+
+// // Image storage configuration
+// const storage = multer.diskStorage({
+//     destination: function (req, file,cb){
+//         cb(null,'./upload/images')
+//     },
+//     filename: (req, file, cb) => {
+//         cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`);
+//     }
+// });
+
+// const upload = multer({ storage: storage });
+
+// // Endpoint for uploading images
+// app.use('/images', express.static('upload/images'));
+// // app.post("/upload", upload.single('product'), (req, res) => {
+// //     res.json({
+// //         success: 1,
+// //         image_url: `http://localhost:${port}/images/${req.file.filename}`
+// //     });
+// // });
+// app.post("/upload", upload.single('product'), async (req, res) => {
+//     try {
+//         // Upload image to local directory
+//         const localFilePath = req.file.path;
+
+//         // Upload image to Cloudinary
+//         const cloudinaryResponse = await uploadOnCloudinary(localFilePath);
+
+//         // Response with image URLs
+//         res.json({
+//             success: 1,
+//             cloudinary_image_url: cloudinaryResponse.url
+//         });
+//     } catch (error) {
+//         console.error("Error uploading image:", error);
+//         res.status(500).json({ success: 0, error: "Internal Server Error" });
+//     }
+// });
+const uploadOnCloudinary = async (localFilePath) => {
+    try {
+        if (!localFilePath) return null;
+        const response = await cloudinary.uploader.upload(localFilePath, {
             resource_type: "auto"
-        }) 
-        console.log("file is uploded on cloudinary",response.url);
-        return response
-    }catch(error){
-        fs.unlinkSync(localFilePath)
+        });
+        console.log("File is uploaded on Cloudinary:", response.url);
+        return response;
+    } catch (error) {
+        console.error("Error uploading to Cloudinary:", error);
         return null;
     }
-}
+};
 
 // Image storage configuration
 const storage = multer.diskStorage({
-    destination: function (req, file,cb){
-        cb(null,'./upload/images')
+    destination: function (req, file, cb) {
+        cb(null, './upload/images')
     },
     filename: (req, file, cb) => {
         cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`);
@@ -86,12 +138,7 @@ const upload = multer({ storage: storage });
 
 // Endpoint for uploading images
 app.use('/images', express.static('upload/images'));
-// app.post("/upload", upload.single('product'), (req, res) => {
-//     res.json({
-//         success: 1,
-//         image_url: `http://localhost:${port}/images/${req.file.filename}`
-//     });
-// });
+
 app.post("/upload", upload.single('product'), async (req, res) => {
     try {
         // Upload image to local directory
@@ -100,14 +147,24 @@ app.post("/upload", upload.single('product'), async (req, res) => {
         // Upload image to Cloudinary
         const cloudinaryResponse = await uploadOnCloudinary(localFilePath);
 
-        // Response with image URLs
-        res.json({
-            success: 1,
-            cloudinary_image_url: cloudinaryResponse.url
-        });
+        if (cloudinaryResponse) {
+            // Response with image URLs
+            res.json({
+                success: 1,
+                cloudinary_image_url: cloudinaryResponse.url
+            });
+        } else {
+            // Handle Cloudinary upload failure
+            res.status(500).json({ success: 0, error: "Failed to upload image to Cloudinary" });
+        }
     } catch (error) {
-        console.error("Error uploading image:", error);
+        console.error("Error processing image upload:", error);
         res.status(500).json({ success: 0, error: "Internal Server Error" });
+    } finally {
+        // Cleanup: delete local file after upload (whether success or failure)
+        if (req.file && req.file.path) {
+            fs.unlinkSync(req.file.path);
+        }
     }
 });
 
