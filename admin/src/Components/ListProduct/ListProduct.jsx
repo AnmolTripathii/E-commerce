@@ -5,13 +5,13 @@ import { RiCloseLine } from 'react-icons/ri';
 function ListProduct() {
   const [allproducts, setAllProducts] = useState([]);
   const fetchInfo = async () => {
-    await fetch(`https://e-commerce-woad-one.vercel.app/allproducts`).then((res) => res.json()).then((data) => { setAllProducts(data) })
+    await fetch(`https://backend-bice-five-39.vercel.app/allproducts`).then((res) => res.json()).then((data) => { setAllProducts(data) })
   }
   useEffect(() => {
     fetchInfo();
   }, [])
   const remove_product = async(id)=>{
-    await fetch(`https://e-commerce-woad-one.vercel.app/removeproduct`,{
+    await fetch(`https://backend-bice-five-39.vercel.app/removeproduct`,{
       method:'POST',
       headers:{
         Accept:'application/json',

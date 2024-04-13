@@ -19,33 +19,12 @@ cloudinary.config({
 });
 
 app.use(express.json());
-const allowedOrigins1 = ['https://e-commerce-azfe.vercel.app'];
-const allowedOrigins2 = ['https://e-commerce-ncd7.vercel.app'];
-
-const corsOptions1 = {
-  origin: allowedOrigins1,
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  optionsSuccessStatus: 200 
-};
-
-const corsOptions2 = {
-  origin: allowedOrigins2,
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  optionsSuccessStatus: 200 
-};
-
-app.use((req, res, next) => {
-  const origin = req.headers.origin;
-  if (allowedOrigins1.includes(origin)) {
-    res.setHeader('Access-Control-Allow-Origin', origin);
-    cors(corsOptions1)(req, res, next);
-  } else if (allowedOrigins2.includes(origin)) {
-    res.setHeader('Access-Control-Allow-Origin', origin);
-    cors(corsOptions2)(req, res, next);
-  } else {
-    next();
-  }
-});
+const corsOptions = {
+    origin: 'https://e-commerce-azfe.vercel.app', // Replace this with your domain
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  };
+  
+  app.use(cors(corsOptions));
 
 
 
@@ -345,20 +324,6 @@ app.get('/allproducts', async (req,res)=>{
 //     const imageName = req.params.imageName;
 //     res.sendFile(path.join(__dirname, `upload/images/${imageName}`));
 // });
-app.get('/fetch-image/:imageName', async (req, res) => {
-    try {
-        const imageName = req.params.imageName;
-
-        // Construct the Cloudinary URL for the image
-        const cloudinaryUrl = cloudinary.url(imageName);
-
-        // Redirect to the Cloudinary URL to serve the image
-        res.redirect(cloudinaryUrl);
-    } catch (error) {
-        console.error("Error fetching image:", error);
-        res.status(500).json({ success: 0, error: "Internal Server Error" });
-    }
-});
 
 //creating endpoint for new collection
 // app.get('./newcollections',async(req,res)=>{
