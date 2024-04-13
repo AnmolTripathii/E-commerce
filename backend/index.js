@@ -18,7 +18,13 @@ cloudinary.config({
 });
 
 app.use(express.json());
-app.use(cors());
+const corsOptions = {
+    origin: 'https://e-commerce-azfe.vercel.app', // Replace this with your domain
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  };
+  
+  app.use(cors(corsOptions));
+  
 
 
 
