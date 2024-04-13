@@ -66,7 +66,7 @@ function AddProduct() {
             let formData = new FormData();
             formData.append('product', image);
     
-            const uploadResponse = await fetch(`https://e-commerce-woad-one.vercel.app/upload`, {
+            const uploadResponse = await fetch(`https://backend-bice-five-39.vercel.app/upload`, {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
@@ -84,7 +84,7 @@ function AddProduct() {
             if (responseData.success) {
                 product.image = responseData.cloudinary_image_url;
                 console.log(product);
-                const addProductResponse = await fetch(`https://e-commerce-woad-one.vercel.app/addproduct`, {
+                const addProductResponse = await fetch(`https://backend-bice-five-39.vercel.app/addproduct`, {
                     method: 'POST',
                     headers: {
                         Accept: 'application/json',
