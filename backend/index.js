@@ -823,7 +823,7 @@ app.post('/addtocart', fetchUser, async (req, res) => {
         // Fetch user data
         let userData = await Users.findOne({ _id: req.user.id });
         if (!userData) {
-            return res.status(200).send("User not found");
+            return res.status(404).send("User not found");
         }
 
         // Ensure cartData is initialized as an empty object if it doesn't exist
