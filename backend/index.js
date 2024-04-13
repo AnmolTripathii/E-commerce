@@ -10,7 +10,7 @@ const bcrypt = require('bcrypt')
 require("dotenv").config(); 
 const cloudinary = require('cloudinary').v2;
 const fs = require('fs');
-const { METHODS } = require("http");
+
           
 cloudinary.config({ 
   cloud_name: process.env.CLOUD_NAME, 
@@ -19,14 +19,35 @@ cloudinary.config({
 });
 
 app.use(express.json());
-const allowedOrigins = ['https://e-commerce-azfe.vercel.app', 'https://e-commerce-ncd7.vercel.app/'];
-const corsOptions = {
-  origin: allowedOrigins,
-  methods:["GET","POST","PUT","DELETE"],
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+const allowedOrigins1 = ['https://e-commerce-azfe.vercel.app'];
+const allowedOrigins2 = ['https://e-commerce-ncd7.vercel.app'];
+
+const corsOptions1 = {
+  origin: allowedOrigins1,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  optionsSuccessStatus: 200 
 };
 
-app.use(cors(corsOptions));
+const corsOptions2 = {
+  origin: allowedOrigins2,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  optionsSuccessStatus: 200 
+};
+
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  if (allowedOrigins1.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    cors(corsOptions1)(req, res, next);
+  } else if (allowedOrigins2.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    cors(corsOptions2)(req, res, next);
+  } else {
+    next();
+  }
+});
+
+
 
 
 
